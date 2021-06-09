@@ -246,9 +246,9 @@
 		{
 		  $verification_key = md5(rand());
 		  $data = array(
-			'nama'			=> $this->input->post('nama'),
-			'telepon'				=> 'null',
-			'alamat'				=> 'null',
+			'nama'					=> $this->input->post('nama'),
+			'telepon'				=> $this->input->post('telepon', true),
+			'alamat'				=> $this->input->post('alamat', true),
 			'email'					=> $this->input->post('email', true),
 			'verification_key'      =>  $verification_key
 		  );

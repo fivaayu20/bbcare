@@ -59,13 +59,27 @@
 						<span class="label-input100">Username</span>
 						<input type="text" name="nama" class="form-control" id="exampleLastName" placeholder="Masukkan Nama" required>
 						<span class="focus-input100"></span>
+						<?php echo form_error('name'); ?>
 					</div>
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Email</span>
-                        <input type="email" class="form-control form-control-user border-left-primary" id="email" name="email" placeholder="Masukkan Email" value="<?= set_value('email')?>" required is_unique>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="No Telepon is required">
+						<span class="label-input100">Nomor Telepon</span>
+						<input type="number" name="telepon" class="form-control" id="exampleLastName" placeholder="Masukkan Nomor Telepon" minlength="9" maxlength="15" value="<?php echo set_value('telepon'); ?>" required>
 						<span class="focus-input100"></span>
+						<?php echo form_error('telepon'); ?>
 					</div>
-
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Alamat is required">
+						<span class="label-input100">Alamat</span>
+						<input type="text" name="alamat" class="form-control" id="exampleLastName" placeholder="Masukkan Alamat" value="<?php echo set_value('alamat'); ?>" required>
+						<span class="focus-input100"></span>
+						<?php echo form_error('alamat'); ?>
+					</div>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+						<span class="label-input100">Email</span>
+                        <input type="email" class="form-control form-control-user border-left-primary" id="email" name="email" placeholder="Masukkan Email"  minlength="10" value="<?= set_value('email');?>" required is_unique>
+						<span class="focus-input100"></span>
+						<?php echo form_error('email'); ?>
+					</div>
+					
 					<div class="row ml-5 mt-2">
 						<div class="container-login100-form-btn ml-3">
                         <input type="submit" name="register" value="Register" class="login100-form-btn" />
