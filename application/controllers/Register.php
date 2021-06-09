@@ -246,13 +246,13 @@
 		{
 		  $verification_key = md5(rand());
 		  $data = array(
-			'nama_pengasuh'			=> $this->input->post('nama'),
-			'alamat'				=> 'null',
+			'nama'			=> $this->input->post('nama'),
 			'telepon'				=> 'null',
+			'alamat'				=> 'null',
 			'email'					=> $this->input->post('email', true),
 			'verification_key'      =>  $verification_key
 		  );
-		  $update = $this->RegistPengasuh_Model->insert($data);
+		  $update = $this->RegistPelanggan_Model->insert($data);
 			//   print_r($update);
 			//   exit;
 		  
