@@ -161,7 +161,7 @@
 					"is_active" =>'aktif',
 					"level" =>'pengasuh',
 					"id_kantor" => $pengasuhData->id_kantor,
-					'date_created' => time(),
+					'date_created' => date('Y-m-d H:i:s'),
 		  
 				  );
 				  $this->db->insert('user', $userrandom);
@@ -309,7 +309,7 @@
 					  "password" => rand(),
 					"is_active" =>'aktif',
 					"level" =>'pelanggan',
-					'date_created' => time(),
+					'date_created' => date('Y-m-d H:i:s'),
 		  
 				  );
 				  $this->db->insert('user', $userrandom);
