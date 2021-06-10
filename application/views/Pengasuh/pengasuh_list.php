@@ -51,7 +51,7 @@
                                         <td class="text-center"><?=$key['nama_pengasuh']?></td>
                                         <td class="text-center"><?=$key['email']?></td>
                                         <td class="text-center">
-                                        <a href="<?=base_url()?>Pengasuh/editPengasuh/<?=$key['id']?>" class="btn btn-info">
+                                        <a href="<?=base_url()?>Pengasuh/editPengasuh/<?=$key['id_pengasuh']?>" class="btn btn-info">
                                         <i class="fa fa-edit"> Lengkapi Biodata </i>
                                         </a>
                                         <!-- <a href="<?=base_url()?>Admin/detailPelanggan/<?=$key['id']?>" class="btn btn-info btn-circle btn-sm">

@@ -43,6 +43,11 @@
                 <p class="fst-italic">Baby Sitter Golongan 1 atau Baby Sitter Baby diperuntukkan mengasuh bayi usia 0 bulan hingga 1 tahun.</p>
                 <img src="<?php echo base_url('assets/utama/img/babysitter/bs-baby.jpg');?>" alt="" class="img-fluid">
                 <p>Baby Sitter Baby hanya melakukan pekerjaan khusus merawat bayi saja setiap hari tanpa melakukan pekerjaan rumah tangga lainnya yang tidak berhubungan dengan kebutuhan bayi.</p>
+
+                <p class="fst-italic">Baby Sitter Golongan 1 atau Baby Sitter Baby diperuntukkan mengasuh bayi usia 0 bulan hingga 1 tahun.</p>
+                <img src="<?php echo base_url('assets/utama/img/babysitter/bs-baby.jpg');?>" alt="" class="img-fluid">
+                <p>Baby Sitter Baby hanya melakukan pekerjaan khusus merawat bayi saja setiap hari tanpa melakukan pekerjaan rumah tangga lainnya yang tidak berhubungan dengan kebutuhan bayi.</p>
+                
               </div>
               <div class="tab-pane" id="tab-2">
                 <h3>Baby Sitter 2</h3>

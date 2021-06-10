@@ -4,7 +4,7 @@
     class Pelanggan_Model extends CI_Model {
         
         public function getPelanggan(){
-            return ($this->db->get('customer')->result_array());
+            return ($this->db->get('')->result_array());
         }
 
         public function getPelangganId($id){

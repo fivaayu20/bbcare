@@ -19,7 +19,7 @@
         }
 
         public function getPengasuhId($id){
-            return $this->db->where('id', $id)->get('pengasuh')->row();
+            return $this->db->where('id_pengasuh', $id)->get('pengasuh')->row();
         }
 
         public function updatePengasuh($id){
@@ -34,7 +34,7 @@
             $this->pendidikan = $post['pendidikan'];
             $this->status = $post['status'];
 
-            $this->db->where('id', $id)->update('pengasuh', $this);
+            $this->db->where('id_pengasuh', $id)->update('pengasuh', $this);
             
             if ($this->db->affected_rows() > 0) {
                 return TRUE;

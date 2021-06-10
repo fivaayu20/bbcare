@@ -34,7 +34,7 @@
 		}
 
         public function editPengasuh($id){
-			
+			$id = $this->session->userdata('id_pengasuh');
 			$title['title'] = 'Edit Biodata | Pengasuh Baby Care';
 			$data['get'] = $this->Pengasuh_Model->getPengasuhId($id);
 			
