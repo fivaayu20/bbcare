@@ -7,20 +7,20 @@
             return ($this->db->get('pelanggan')->result_array());
         }
 
-        public function deletePelanggan($id) {
-            $this->db->where('id', $id)->delete('pelanggan');
+        public function deletePelanggan($id_pelanggan) {
+            $this->db->where('id_pelanggan', $id_pelanggan)->delete('pelanggan');
         }
 
-        public function getPelanggan($id){
-            return $this->db->where('id', $id)->get('pelanggan')->row();
+        public function getPelanggan($id_pelanggan){
+            return $this->db->where('id_pelanggan', $id_pelanggan)->get('pelanggan')->row();
         }
 
-        public function updatePelanggan($id){
+        public function updatePelanggan($id_pelanggan){
             $post = $this->input->post();
             $this->nama = $post['nama'];
             $this->telepon = $post['telepon'];
 
-            $this->db->where('id', $id)->update('pelanggan', $this);
+            $this->db->where('id_pelanggan', $id_pelanggan)->update('pelanggan', $this);
             
             if ($this->db->affected_rows() > 0) {
                 return TRUE;
@@ -29,10 +29,10 @@
             }
         }
 
-        public function insertPelanggan($id) {
+        public function insertPelanggan($id_pelanggan) {
             if ($this->input->post('submit')) {
             $array = array(
-                "id"=>$this->input->post('id', TRUE),
+                "id_pelanggan"=>$this->input->post('id_pelanggan', TRUE),
                 "nama"=>$this->input->post('nama', TRUE),
                 "telepon"=>$this->input->post('telepon', TRUE),
                 // "id_store"=>$id
@@ -41,7 +41,7 @@
             $this->db->insert('pelanggan', $array);
         }
 
-        public function searchPelanggan($username = null) {
+        public function searchPelanggan($nama = null) {
             $input = $this->input->post('keyword');
             $this->db->select('p.*');
             $this->db->from('pelanggan as p');

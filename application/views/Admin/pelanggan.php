@@ -53,13 +53,13 @@
                                         <td class="text-center"><?=$key['nama']?></td>
                                         <td class="text-center"><?=$key['telepon']?></td>
                                         <td class="text-center">
-                                        <a href="<?=base_url()?>Admin/editPelanggan/<?=$key['id']?>" class="btn btn-success btn-circle btn-sm">
+                                        <a href="<?=base_url()?>Admin/editPelanggan/<?=$key['id_pelanggan']?>" class="btn btn-success btn-circle btn-sm">
                                         <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="<?=base_url()?>Admin/detailPelanggan/<?=$key['id']?>" class="btn btn-info btn-circle btn-sm">
+                                        <a href="<?=base_url()?>Admin/detailPelanggan/<?=$key['id_pelanggan']?>" class="btn btn-info btn-circle btn-sm">
                                         <i class="fas fa-info-circle"></i> 
                                         </a>
-                                        <a href="<?=base_url()?>Admin/deletePelanggan/<?=$key['id']?>" class="btn btn-danger btn-circle btn-sm">
+                                        <a href="<?=base_url()?>Admin/deletePelanggan/<?=$key['id_pelanggan']?>" class="btn btn-danger btn-circle btn-sm">
                                         <i class="fa fa-trash"></i> 
                                         </a>
                                         </td>

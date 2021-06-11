@@ -18,35 +18,44 @@
         //     return $results;
         }
 
-        public function getPengasuhId($id){
-            return $this->db->where('id_pengasuh', $id)->get('pengasuh')->row();
+        public function getPengasuhId($id_pengasuh){
+            return $this->db->where('id_pengasuh', $id_pengasuh)->get('pengasuh')->row();
         }
 
-        public function updatePengasuh($id){
+        public function updatePengasuh($id_pengasuh){
             $post = $this->input->post();
             $this->telepon = $post['telepon'];
             $this->tgl_lahir = $post['tgl_lahir'];
             $this->agama = $post['agama'];
-            // $this->foto = $this->UploadImage();
-            // $this->foto = $post['foto'];
+            
+            if (!empty($_FILES["foto"]["name"])) {
+                $this->foto = $this->_UploadImage();
+            } else {
+                $this->foto = $post["foto_lama"];
+            }
+
             $this->kategori = $post['kategori'];
             $this->alamat = $post['alamat'];
             $this->pendidikan = $post['pendidikan'];
             $this->status = $post['status'];
 
-            $this->db->where('id_pengasuh', $id)->update('pengasuh', $this);
+            var_dump($this->db->where('id_pengasuh', $id_pengasuh)->update('pengasuh', $this));
+            die();
             
             if ($this->db->affected_rows() > 0) {
                 return TRUE;
             } else {
                 return FALSE;
             }
+            // var_dump($post);
+            // die();
         }
 
         private function UploadImage() {
             
-            $config['upload_path'] = './uploads/user';
+            $config['upload_path'] = './upload/pengasuh';
             $config['allowed_types'] = 'jpg|png|jpeg';
+            $config['file_name']    = $this->id_pengasuh;
             $config['max_size']  = '8192';
             $config['overwrite'] = true;
             

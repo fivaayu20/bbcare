@@ -71,5 +71,27 @@
           </div>
         </div>
 
+        <div id="PGalleryTwoC" class="row">
+							<br/>
+							<h3 class="title"><i class="fa fa-picture-o"></i> Gallery Photo</h3>
+							
+							<?php
+								foreach ($data->result_array() as $a) {
+									$id_pengasuh=$a['id_pengasuh'];
+									$nama_pengasuh=$a['nama_pengasuh'];
+									$foto=$a['foto'];
+								
+							?>
+							<div class="mobile-two">
+							<div class="gallery-item">
+								<a href="<?php echo base_url().'assets/utama/img/gallery/'.$foto;?>" rel="external">
+									<!-- <img src="<?php echo base_url().'assets/galeries/'.$gambar;?>" style="width:150px;height:150px;" title="<?php echo $judul;?>" /> -->
+								</a>
+							</div>
+							</div>
+							<?php } ?>
+							
+						</div>
+
       </div>
     </section><!-- End Departments Section -->

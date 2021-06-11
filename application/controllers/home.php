@@ -38,10 +38,16 @@ class Home extends CI_Controller {
 
 	public function Daftar_Pekerja(){
 		$title['title'] = "Daftar Pekerja Baby Care";
+		$x['data']=$this->User->Get_Pengasuh();
 		$this->load->view('user/header', $title);
-		$this->load->view('user/daftarpekerja');
+		$this->load->view('user/daftarpekerja', $x);
 		$this->load->view('user/footer');
 
 	}
+
+	// function Daftar(){
+	// 	$x['data']=$this->User_Model->Get_Pengasuh();
+	// 	$this->load->view('User/daftarpekerja',$x);
+	// }
 }
 

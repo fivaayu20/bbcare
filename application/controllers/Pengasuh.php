@@ -33,10 +33,10 @@
 			$this->load->view('Template/footer');
 		}
 
-        public function editPengasuh($id){
-			$id = $this->session->userdata('id_pengasuh');
+        public function editPengasuh($id_pengasuh){
+			// $id = $this->session->userdata('id_pengasuh');
 			$title['title'] = 'Edit Biodata | Pengasuh Baby Care';
-			$data['get'] = $this->Pengasuh_Model->getPengasuhId($id);
+			$data['get'] = $this->Pengasuh_Model->getPengasuhId($id_pengasuh);
 			
 			$this->form_validation->set_rules('telepon', 'Telepon', 'trim|required');
             $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'trim|required');
@@ -48,7 +48,7 @@
             $this->form_validation->set_rules('status', 'Status', 'trim|required');
 			
 			if ($this->form_validation->run() == TRUE) {
-				$this->Pengasuh_Model->updatePengasuh($id);	
+				$this->Pengasuh_Model->updatePengasuh($id_pengasuh);	
 						
 				redirect('Pengasuh/Biodata', 'refresh');
 			}

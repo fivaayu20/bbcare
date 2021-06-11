@@ -9,28 +9,29 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Biodata Pengasuh</h1>
                             </div>
-
+                            
+                            
                             <form action="" method="POST">
-                            <?=form_open('Pengasuh/editPengasuh')?>
+                            <?=form_open('Pengasuh/editPengasuh');?>
                                 <div class="form-group row">
                                     <div class="col-sm-9 mb-5 mb-sm-0">
                                         <div class="name"> NIK </div>
                                             <input type="text" class="form-control" id="nik" name="nik"
-                                            value="<?=$get->nik?>">
+                                            value="<?=$get->nik?>" disabled>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-10 mb-5 mb-sm-0">
                                     <div class="name"> Nama Lengkap </div>
                                         <input type="text" class="form-control" id="nama_pengasuh" name="nama_pengasuh"
-                                        value="<?=$get->nama_pengasuh?>"> 
+                                        value="<?=$get->nama_pengasuh?>" disabled> 
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                 <div class="col-sm-8 mb-5 mb-sm-0">
                                     <div class="name"> Email </div>
                                     <input type="email" class="form-control" id="email" name="email"
-                                    value="<?=$get->email?>">
+                                    value="<?=$get->email?>" disabled>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -97,6 +98,7 @@
                                 <div class="form-group row">
                                 <div class="col-sm-3 mb-3 mb-sm-0">
                                     <label>Foto</label>
+                                    <input type="hidden" name="foto_lama" value="<?=$get->foto?>">
                                     <input type="file" name="foto" class="mt-1">
                                 </div>
                                 </div>
@@ -104,14 +106,13 @@
                                 <br>
                             
                                 <div class="col-sm-4 mb-5 mb-sm-0">
-                                    <button class="btn btn-primary btn-user btn-block" name="submit" type="submit">
+                                    <button class="btn btn-primary btn-user btn-block" name="submit" type="submit" value="Update">
                                         Submit
                                     </button>
                                 </div>
-                           
-                            
-                            <?=form_close();?>
+                                <?=form_close();?>
                             </form>
+                           
                             <!-- <div class="text-center">
                                 <a class="small" href="forgot-password.html">Forgot Password?</a>
                             </div>

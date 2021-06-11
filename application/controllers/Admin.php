@@ -22,10 +22,10 @@
 
 		public function Pelanggan() {
 			// $id = $this->session->userdata('id_store');
-			$username = $this->session->userdata('username');
+			$nama = $this->session->userdata('nama');
 			// $title['title'] = 'Riwayat Pesanan | Point Care Laundry';
 			$data['data'] = $this->Admin_Model->getPelangganId();
-			$data['data'] = $this->Admin_Model->searchPelanggan($username);
+			$data['data'] = $this->Admin_Model->searchPelanggan($nama);
 
 			$this->load->view('Template/headerAdmin');			
 			$this->load->view('Admin/pelanggan', $data);
@@ -33,22 +33,22 @@
 
 		}
 
-		public function deletePelanggan($id){
-			$this->Admin_Model->deletePelanggan($id);
+		public function deletePelanggan($id_pelanggan){
+			$this->Admin_Model->deletePelanggan($id_pelanggan);
 			
 			redirect('Admin/Pelanggan','refresh');
 		}
 		
-		public function editPelanggan($id){
+		public function editPelanggan($id_pelanggan){
 			// $id = $this->session->userdata('id');
 			// $title['title'] = 'Edit Daftar Pesanan | Pegawai Point Care Laundry';
-			$data['get'] = $this->Admin_Model->getPelanggan($id);
+			$data['get'] = $this->Admin_Model->getPelanggan($id_pelanggan);
 			
 			$this->form_validation->set_rules('nama', 'Nama Pelanggan', 'trim|required');
 			$this->form_validation->set_rules('telepon', 'Telepon', 'trim|required');
 			
 			if ($this->form_validation->run() == TRUE) {
-				$this->Admin_Model->updatePelanggan($id);	
+				$this->Admin_Model->updatePelanggan($id_pelanggan);	
 						
 				redirect('Admin/Pelanggan', 'refresh');
 			}
@@ -65,7 +65,7 @@
 			$this->form_validation->set_rules('telepon', 'No. Telepon', 'trim|required');
 			
 			if ($this->form_validation->run() == TRUE) {
-				$this->Admin_Model->insertPelanggan($id);
+				$this->Admin_Model->insertPelanggan($id_pelanggan);
 				
 				redirect('Admin/Pelanggan','refresh');
 			}
